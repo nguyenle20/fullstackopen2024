@@ -1,0 +1,79 @@
+In JavaScript, String values are immutable, which means that they cannot be altered once created.
+ Note that this does not mean that myStr cannot be changed, just that the individual characters of a string literal cannot be changed. The only way to change myStr would be to assign it with a new string.
+ 
+ 
+ push() : add new property to the end of array
+ pop()	: remove property at the end of array
+ shift(): remove property at the begining indexes of array
+ unshift(): you can also unshift elements to the beginning of an array i.e. add elements in front of the array.
+
+
+
+	Object methods and "this"
+Arrow functions and functions defined using the function keyword vary substantially when it comes to how they behave with respect to the keyword this, which refers to the object itself.
+
+When calling the method through a reference, the method loses knowledge of what the original this was
+When calling the method through a reference the value of this becomes the so-called global object and the end result is often not what the software developer had originally intended.
+
+One of these is using a method called bind
+	e.g arto.greet.bind(arto)
+		-> Calling arto.greet.bind(arto) creates a new function where this is bound to point to Arto
+
+		
+	Classes
+there is no class mechanism in JavaScript like the ones in object-oriented programming languages. There are, however, features to make "simulating" object-oriented classes possible.
+	e.g
+		class Person {
+		  constructor(name, age) {
+			this.name = name
+			this.age = age
+		  }
+		  greet() {
+			console.log('hello, my name is ' + this.name)
+		  }
+		}
+
+		const adam = new Person('Adam Ondra', 35)
+		adam.greet()
+		
+		
+	Component helper functions
+
+
+	Destructuring
+ Destructuring makes the assignment of variables even easier, since we can use it to extract and gather the values of an object's properties into separate variables:
+e.g: 
+	const Hello = (props) => {
+	  const { name, age } = props
+	  const bornYear = () => new Date().getFullYear() - age
+
+	  return (
+		<div>
+		  <p>Hello {name}, you are {age} years old</p>
+		  <p>So you were probably born in {bornYear()}</p>
+		</div>
+	  )
+	}
+
+	+ destructuring a step further
+	
+	const Hello = ({ name, age }) => {
+	  const bornYear = () => new Date().getFullYear() - age
+
+	  return (
+		<div>
+		  <p>
+			Hello {name}, you are {age} years old
+		  </p>
+		  <p>So you were probably born in {bornYear()}</p>
+		</div>
+	  )
+	}	
+ Instead of assigning the entire props object into a variable called "props" and then assigning its properties into the variables "name and age"
+ 
+	State
+ You can use concat method (does not mutate the existing array but rather returns a new copy of the array with the item added to it) cuz that not mutated directly.
+
+
+
+
