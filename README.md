@@ -1,2 +1,2 @@
-# fullstackopen2023
-Fullstackopen 2023 course
+# fullstackopen2024
+Fullstackopen 2024 course
